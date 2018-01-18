@@ -1,0 +1,11 @@
+<h2> Jamii (Community in Swahili)</h2>
+<p>The Jamii was concerned with Urban Gardening. A semi-new phenomenon where people in cities start growing vegetables in boxes. This ranges from people growing tomatoes in pots on their balcony, to groups getting together and renting a larger space. As seen on the render on the left we worked on such larger communities.</p>
+<p>The Jamii was a console on which to create a independent market between gardeners, each urban gardening community would have their own marketplace were members could auction away any vegetables they would not use themselves, while they still are fresh, in return they would earn points that they themselves would be able to buy fresh vegies that another garderner had put up for auciton. </p>
+<p> Auctions were created by putting your vegetables in a bucket under the Jamii, the contents were weighed and a picture was taken from underneath the console. When purchasing you would login and put the amount of produce into the bucket and the weight would be subtracted from the auction and the points would be transferred according to the set price/kg. </p>
+<p> We found that some garderners liked to grow a particular plant out of fun, chilis, tomatoes etc. But would grow an excess to their own usage, and this enabled them to grow what they liked and still get fresh grown produce from other members. Secondly it also enabled people to grow seasonal foods, and 'sell' them and earn points for the rest of the year.</p>
+<h4>Technologies</h4>
+<p>The second picture is showing a working prototype of the Jamii.</p>
+<p>The console itself ran on a raspberry pi, the code itself being running a BASh script, that communicated with a remote server and database using PHP. A numpad was hacked together to allow typing and selection on the monitor. Cameras and sensors were also used.</p>
+<p>On the backend was a website and MySQL database.</p>
+<h4>Collaborators</h4>
+<p>Daniel Andreas Bye Walus, Amalie F. Christiansen, Troels Ahrengot, Christoffer Maarup Nørbjerg</p>

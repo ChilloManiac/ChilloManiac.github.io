@@ -1,0 +1,247 @@
+$baud = 9600
+$crystal = 8000000
+
+'Ports setting up ports
+'Using ADC on PortC4 and PortC5
+'Rest of PortC is set as output manually to avoid
+'overwriting the ADC configuration
+Config Portb = Output
+Config Portd = Output
+Config Adc = Single , Prescaler = Auto
+Config Portc.0 = Output
+Config Portc.1 = Output
+
+'Setting up Timer for PWM usage
+'This allows us to send an 8bit value as analog output
+'This is used for controlling the strength of the Red and Blue
+'LEDs within the RBG-LED
+'Theres only 2 of those ports on the ATmega8, hence why the green is not
+'controlled in this way
+Config Timer1 = Pwm , Pwm = 8 , Compare_a_pwm = Clear_up , Compare_b_pwm = Clear_up , Prescale = 1
+
+
+'Declaring subs:
+'Sets the color of the LED to predefined color. Parameter corresponds to a color
+Declare Sub Setcolor(byval Color As Byte)
+'Shuts off the RGB LEDs
+Declare Sub Resetcolor()
+'Blinks the LEDs on their current color a few times to signal
+'that the color has been sent
+Declare Sub Colorblink()
+'Subs to set colors, to make the code look cleaner
+Declare Sub Setgreen(byval Value As Byte)                   '2bit (0-3)
+Declare Sub Setred(byval Value As Byte)                     '8bit (0-255)
+Declare Sub Setblue(byval Value As Byte)                    '8bit (0-255)
+
+'Takes a distance from the IR-sensor, and translates it to a number
+'that corresponds to a color in the subroutine 'setcolor'
+Declare Function Irtocolortranslater(byval Distance As Byte) As Byte
+'Takes a value from the IR-sensor and translates it into a cm-value
+'Will return 255 as an error value for debouncing purposes.
+Declare Function Getirvalue() As Byte
+'Checks the current input from the microphone, if higher than a predefined value
+'it will return 1, otherwise 0
+'Somehow we could not get this function to work with "bit" as value_type
+Declare Function Ismicinputhigh() As Byte
+'This function takes an ascii-input from the bluetooth
+'and with a primitive method translates it to a color-number
+Declare Function Translateinput(byval Asciival As Byte) As Byte
+
+'Variables
+'Holds a value for the current color displayed
+Dim Localcolor As Byte
+'Hold a value for the color received from the paired device
+Dim Receivedcolor As Byte
+
+'Flags to ensure the Do-loop runs as it should:
+'This flag allows you to turn off a received signal with the IR
+'Instead of starting to set a new color
+Dim Hasreceivedcolor As Bit
+'This prevents the Do-loop to reset the color that has been received
+Dim Issettingcolor As Bit
+
+
+'Used for debouncing in GetIrValue
+'The Value read from the IR has to be the same multiple times in a row
+'to avoid random reads from the IR to be returned.
+Dim Debouncer1 As Byte
+Dim Debouncer2 As Byte
+Dim Debouncer3 As Byte
+
+'The current value from the IR in cm
+Dim Irvalue As Byte
+
+
+'Setting up default values
+Debouncer1 = 0
+Debouncer2 = 0
+Debouncer3 = 0
+
+
+'The main loop of the program
+Do
+  Irvalue = Getirvalue()
+  'If the IR-value (in centimeters) enter loop
+  While Irvalue >= 5 And Irvalue <= 25
+      Issettingcolor = 1
+      'If the current color has been received, turn it off
+      If Hasreceivedcolor = 1 Then
+         Call Resetcolor()
+         Hasreceivedcolor = 0
+         Waitms 4000
+      'Otherwise it means that the user wants to specify a color for
+      'him/her to send
+      Else
+         Localcolor = Irtocolortranslater(irvalue)
+         Call Setcolor(localcolor)
+         'Checks if the color currently selected should be sent
+         If Ismicinputhigh() = 1 Then
+            'transmit which color was selected to paired AmBird
+            Print Localcolor
+            'Colorblink is a visual feedback that shows the color has been sent
+            Call Colorblink()
+         End If
+      End If
+      Waitms 15
+      'To avoid the whileloop to run forever, we need to check for new IrValues
+      Irvalue = Getirvalue()
+   Wend
+   'This flag allows you to turn off a received signal with the IR
+   'Instead of starting to set a new color
+   If Issettingcolor = 1 And Irvalue <> 255 Then
+      Call Resetcolor()
+      Issettingcolor = 0
+   End If
+
+   'Checks if theres an input from the bluetooth component
+   'and that an illegal value hasnt been read from the IR
+   While Ischarwaiting() = 1 And Irvalue <> 255
+      Receivedcolor = Waitkey()
+      'convert from Ascii
+      Receivedcolor = Translateinput(receivedcolor)
+      If Receivedcolor > 0 And Receivedcolor < 7 Then
+         'Sets a flag
+         Hasreceivedcolor = 1
+         Call Setcolor(receivedcolor)
+      End If
+   Wend
+   Waitms 25
+Loop
+
+'Converts an Ascii number to a decimal number, very primitively
+Function Translateinput(asciival As Byte)
+   Local P As Byte
+   P = Asciival - 48
+   Translateinput = P
+End Function
+
+'Returns 0 or 1 depending on the MicInput
+Function Ismicinputhigh()
+   Local P As Word
+   P = Getadc(5)
+   If P > 505 And P < 1000 Then
+      Ismicinputhigh = 1
+   Else
+      Ismicinputhigh = 0
+   End If
+End Function
+
+'Gets a value from the IR-sensor and converts it to CM
+'Then it saves the values in the Debouncers.
+'If all the debouncer variables are equal to P
+' (note That Debouncer1 Will Always Be Equal To P)
+'Then The Value In Cm Is Returned, Otherwise Its Deemed As A Random Value
+Function Getirvalue()
+   Local P As Integer
+   P = Getadc(4)
+   P = P - 11
+   P = 2076 / P
+   If P > 0 And P < 30 Then
+      Debouncer3 = Debouncer2
+      Debouncer2 = Debouncer1
+      Debouncer1 = P
+      If Debouncer2 = P And Debouncer3 = P Then
+         Getirvalue = P
+      Else
+         Getirvalue = 255
+      End If
+   Else
+      Getirvalue = 0
+   End If
+End Function
+
+'Translates a distance in CM to a number representing a color
+Function Irtocolortranslater(byval Distance As Byte)
+   Local P As Byte
+   P = Distance
+   P = P - 2
+   P = P / 3
+   Irtocolortranslater = P
+End Function
+
+'Sets the green LEDs value with an R/R2 ladder
+'and a binary value from 0-15
+Sub Setgreen(value As Byte)
+   If Value < 4 Then
+      Reset Portc.0
+      Reset Portc.1
+      If Value >= 2 Then
+         Set Portc.1
+         Value = Value - 2
+      End If
+      If Value = 1 Then
+         Set Portc.0
+         Value = Value - 1
+      End If
+   End If
+End Sub
+
+'Set red LED with PWM
+Sub Setred(value As Byte)
+   Pwm1a = Value
+End Sub
+
+'Set red LED with PWM
+Sub Setblue(value As Byte)
+   Pwm1b = Value
+End Sub
+
+'Simple sub that blinks the current color and the shuts off the LED
+Sub Colorblink()
+   Local A As Byte
+   For A = 1 To 3 Step 1
+      Call Resetcolor()
+      Waitms 600
+      Call Setcolor(localcolor)
+      Waitms 400
+   Next
+   Call Resetcolor()
+   Waitms 2000
+End Sub
+
+'Turns off the entire RGB-LED
+Sub Resetcolor()
+   Pwm1a = 0
+   Pwm1b = 0
+   Reset Portc.0
+   Reset Portc.1
+End Sub
+
+'Sets a color depending on the value (controls both red, blue and green)
+Sub Setcolor(color As Byte)
+   If Color >= 1 And Color <= 6 Then
+      Call Resetcolor()
+      Select Case Color
+         Case 1 : Call Setred(255)                          'Red
+         Case 2 : Call Setred(255)                          'purple
+                  Call Setblue(255)
+         Case 3 : Call Setred(150)                          'yellow
+                  Call Setgreen(3)
+         Case 4 : Call Setgreen(3)                          'green
+         Case 5 : Call Setgreen(3)                          'teal
+                  Call Setblue(60)
+         Case 6 : Call Setblue(255)                         'blue
+      End Select
+   End If
+End Sub
+End
