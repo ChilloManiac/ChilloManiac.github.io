@@ -6,17 +6,11 @@
 
 function changePort(str) {
 	var imagePath = "public/images/" + str + ".jpg";
-	var imagePath2 = "public/images/" + str + "2.jpg";
 	if (checkFile(imagePath)) {
 		document.getElementById("port-image").src=imagePath;
 	} else {
 		document.getElementById("port-image").src="";
 		document.getElementById("port-image").alt="Couldn't find image"
-	}
-	if (checkFile(imagePath2)) {
-		document.getElementById("port-image2").src=imagePath2;
-	} else {
-		document.getElementById("port-image2").src="";
 	}
 	cleanActiveModifier();
 	document.getElementById("list-" + str).className += " active";
