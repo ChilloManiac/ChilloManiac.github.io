@@ -1,4 +1,5 @@
-<h2> Ambird (Ambient Bird)</h2>
+<h2> Ambird </h2>
+<h3>Ambient Bird</h3>
 <p>This project was completed during the Advanced Physical Computing course. This course had three distinct aspects, combined to create and overall goal. 
 First of all we were tasked to create our own embedded software, without using anything but microcontrollers as our CPU, meaning no Arduino/Raspberry and the like. In our case we used an ATMega8. 
 Secondly the product would have to be ambient, able to pass as an object in the background, while still managing to complete it's task
