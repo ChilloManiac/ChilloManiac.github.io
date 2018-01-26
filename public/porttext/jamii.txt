@@ -8,5 +8,5 @@
 <p>The second picture is showing a working prototype of the Jamii.</p>
 <p>The console itself ran on a raspberry pi, the code itself being running a BASh script (all of them can be found <a href="examples.html">here</a>, that communicated with a remote server and database using PHP. A numpad was hacked together to allow typing and selection on the monitor. Cameras and sensors were also used.</p>
 <p>On the back end was a website and MySQL database.</p>
-<h4>Collaborators</h4>
-<p>Daniel Andreas Bye Walus, Amalie F. Christiansen, Troels Ahrengot, Christoffer Maarup Nørbjerg</p>
+<h4>My Collaborators</h4>
+<p>Daniel Andreas Bye Walus, Amalie F. Christiansen, Troels Ahrengot.</p>

@@ -9,5 +9,5 @@ Thirdly it had to <i>give value</i> to peoples lives, e.g. saving the environmen
 <h4>Technologies</h4>
 <p>The microcontroller was programmed using Basic <a href="public/examples/ambird.txt">(code example)</a>.</p>
 <p>The rest of the project was mainly consisting of piecing together small electronics such as sensors, LEDs and making circuit boards. Lastly, much effort also went into researching and proving that our solution <i> gave value.</i></p>
-<h4>Collaborators</h4>
-<p> Stine Jespersen, Rasmus Balthasar Kloth Stounbjerg, Sille Agerbæk Sørensen, Christoffer Maarup Nørbjerg</p>
+<h4>My Collaborators</h4>
+<p>Stine Jespersen, Rasmus Balthasar Kloth Stounbjerg, Sille Agerbæk Sørensen.</p>

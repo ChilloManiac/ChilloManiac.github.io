@@ -5,5 +5,5 @@
 <p> This project was not focused on programming as much as figuring out how to create a new system, in which the current problems would never occur again. Identifying what lead to these ad-hoc methods being invented and figuring out a sustainable solution was the main goal.</p>
 <h4>Technologies</h4>
 <p>With this projects focus in mind, most methods used where related to user experience, user tests and analysis' of the organization.</p>
-<h4>Collaborators</h4>
-<p>Anders Holm, Jonas Tranberg, Christoffer Nørbjerg</p>
+<h4>My Collaborators</h4>
+<p>Anders Holm, Jonas Tranberg.</p>
