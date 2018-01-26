@@ -1,0 +1,122 @@
+#!/bin/bash
+
+newKey="~"
+lastKey=""
+newChar=""
+res=""
+
+
+clear
+until [ "$newKey" = "" ]; do
+	lastKey=$newKey
+	read -n 1 newKey
+	if [ "$lastKey" = "$newKey" ]; then
+		case $newKey in
+			2) 	if [ "$newChar" = "A" ]; then
+					newChar="B"
+				elif [ "$newChar" = "B" ]; then
+					newChar="C"
+				elif [ "$newChar" = "C" ]; then
+					newChar="Æ"
+				elif [ "$newChar" = "Æ" ]; then
+					newChar="Å"
+				else
+					newChar="A"
+				fi
+				;;
+			3) 	if [ "$newChar" = "D" ]; then
+					newChar="E"
+				elif [ "$newChar" = "E" ]; then
+					newChar="F"
+				else
+					newChar="D"
+				fi
+				;;
+			4) 	if [ "$newChar" = "G" ]; then
+					newChar="H"
+				elif [ "$newChar" = "H" ]; then
+					newChar="I"
+				else
+					newChar="G"
+				fi
+				;;
+			5) 	if [ "$newChar" = "J" ]; then
+					newChar="K"
+				elif [ "$newChar" = "K" ]; then
+					newChar="L"
+				else
+					newChar="J"
+				fi
+				;;
+			6) 	if [ "$newChar" = "M" ]; then
+					newChar="N"
+				elif [ "$newChar" = "N" ]; then
+					newChar="O"
+				elif [ "$newChar" = "O" ]; then
+					newChar="Ø"
+				else
+					newChar="M"
+				fi
+				;;
+			7) 	if [ "$newChar" = "P" ]; then
+					newChar="Q"
+				elif [ "$newChar" = "Q" ]; then
+					newChar="R"
+				elif [ "$newChar" = "R" ]; then
+					newChar="S"
+				else
+					newChar="P"
+				fi
+				;;
+			8) 	if [ "$newChar" = "T" ]; then
+					newChar="U"
+				elif [ "$newChar" = "U" ]; then
+					newChar="V"
+				else
+					newChar="T"
+				fi
+				;;
+			9) 	if [ "$newChar" = "W" ]; then
+					newChar="X"
+				elif [ "$newChar" = "X" ]; then
+					newChar="Y"
+				elif [ "$newChar" = "Y" ]; then
+					newChar="Z"
+				else
+					newChar="W"
+				fi
+				;;
+			-)	res=${res::-1}
+				newChar=""
+		esac
+		clear	
+		echo -n $res$newChar
+	else
+		if [ "$newKey" = "-" ]; then
+			newChar=""
+			lastKey=$newKey
+		fi
+		res=$res$newChar
+		case $newKey in
+			0) 	newChar=" ";;
+			1)	newChar="";;
+			2)	newChar="A";;
+			3)	newChar="D";;
+			4)	newChar="G";;
+			5)	newChar="J";;
+			6)	newChar="M";;
+			7)	newChar="P";;
+			8)	newChar="T";;
+			9)	newChar="W";;
+			*) 	;;
+		esac
+
+		clear
+		echo -n $res$newChar
+	fi
+	
+	
+done
+
+clear
+echo $res

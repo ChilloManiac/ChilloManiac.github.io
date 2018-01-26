@@ -62,6 +62,39 @@ body {
 .front img {
   max-width: 100%;
 }
+.example-list {
+  grid-area: "front";
+  border-top: 1px solid #222;
+}
+.example-list p {
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+}
+.example-list ul {
+  columns: 2;
+  list-style-type: none;
+  padding: 0;
+}
+.example-list ul li {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.example-list ul li a {
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  border: 1px solid #222;
+}
+.example-list ul li a:link,
+.example-list ul li a:visited {
+  color: #333;
+}
+.example-list ul li a:hover {
+  background: #444;
+  color: #fff;
+}
 .main-art {
   grid-area: "main-art";
   font-family: Helvetica, sans-serif;
@@ -179,6 +212,13 @@ body {
     grid-row-end: 3;
     display: grid;
     grid-template-columns: 4fr 3fr;
+  }
+  .example-list {
+    padding-top: 5px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
   .splash-img {
     justify-self: end;
