@@ -1,0 +1,76 @@
+#!/bin/bash
+
+
+cd ~
+sellerID=
+vegetable=
+price=
+minimumPrice=
+amount=
+location=
+confirmation=
+
+if [ "$1" = "-ID" ]
+    then
+	shift
+	sellerID="$1"
+	shift
+else
+	echo "No ID?"
+	read -s	
+	exit
+fi
+
+rm *.jpg
+clear
+
+echo "Put dine grøntsager på vægten og tryk derefter enter..."
+read -s
+
+echo "Tager billede..."
+
+imageName=$(date +%s)
+raspistill -t 1 -n -w 640 -h 360 -o $imageName.jpg
+
+until [ "$confirmation" = "1" ]; do
+	clear
+	echo "Hvilken grøntsag sælger du?"
+	read vegetable
+	clear
+	echo "Hvilken pris? (per 100 gram)"
+	read price
+	clear
+	echo "Hvad er mindsteprisen du vil sælge til?"
+	read minimumPrice
+	amount=$(sudo weight.py)
+	clear
+	echo "Der er $amount gram i skålen"
+	read -s
+	clear
+	echo "Hvilket nummer har din/dit kasse/lod?"
+	read location
+	clear
+
+	echo "Er disse oplysninger korrekte?"
+	echo "Du sælger $amount gram $vegetable med en startpris på $price og et minimum på $minimumPrice"
+	echo "Dit lodnummer er $location"
+	echo "	1) Informationerne er rigtige"
+	echo "	2) Der er fejl, tag mig tilbage"
+	echo "	3) Lav ingen auktion"
+	read confirmation
+	if [ "$confirmation" = "3" ]; then
+		exit
+	fi 
+done
+
+echo "Sender billede..."
+sftp -b mybatch.txt pi@***.***.***.*** -q
+clear
+
+echo "Starter Auktion..."
+curl --data "posting=1&sellerID=$sellerID&vegetable=$vegetable&price=$price&minimumPrice=$minimumPrice&amount=$amount&location=$location&imageRef='/images/$imageName.jpg'" http://***.***.***.***/postAuctions.php
+echo "Din auktion er nu startet!"
+echo "Tryk enter for at fortsætte"
+read -s
+
+rm $imageName.jpg

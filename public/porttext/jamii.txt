@@ -6,7 +6,7 @@
 <p> We found that some gardeners liked to grow a particular plant out of fun, chilies, tomatoes etc. But would grow an excess to their own usage, and this enabled them to grow what they liked and still get fresh grown produce from other members. Secondly it also enabled people to grow seasonal foods, and 'sell' them and earn points for the rest of the year.</p>
 <h4>Technologies</h4>
 <p>The second picture is showing a working prototype of the Jamii.</p>
-<p>The console itself ran on a raspberry pi, the code itself being running a BASh script, that communicated with a remote server and database using PHP. A numpad was hacked together to allow typing and selection on the monitor. Cameras and sensors were also used.</p>
+<p>The console itself ran on a raspberry pi, the code itself being running a BASh script (all of them can be found <a href="examples.html">here</a>, that communicated with a remote server and database using PHP. A numpad was hacked together to allow typing and selection on the monitor. Cameras and sensors were also used.</p>
 <p>On the back end was a website and MySQL database.</p>
 <h4>Collaborators</h4>
 <p>Daniel Andreas Bye Walus, Amalie F. Christiansen, Troels Ahrengot, Christoffer Maarup Nørbjerg</p>
