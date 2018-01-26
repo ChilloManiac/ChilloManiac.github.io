@@ -154,6 +154,7 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   padding-right: 5px;
+  object-fit: contain;
 }
 .port-entry .port-text {
   grid-row-start: 2;
