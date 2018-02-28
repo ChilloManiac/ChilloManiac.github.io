@@ -73,7 +73,7 @@ body {
   text-align: center;
 }
 .example-list ul {
-  columns: 2;
+  columns: 1;
   list-style-type: none;
   padding: 0;
 }
@@ -223,6 +223,9 @@ body {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
+  }
+  .example-list ul {
+    columns: 2;
   }
   .splash-img {
     justify-self: end;
