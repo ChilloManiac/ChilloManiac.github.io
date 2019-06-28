@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Christoffer Nørbjerg</title>
-    <link>www.norbjerg.dk/posts/</link>
+    <link>http://www.norbjerg.dk/posts/</link>
     <description>Recent content in Posts on Christoffer Nørbjerg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Jun 2019 11:15:04 +0200</lastBuildDate>
     
-	<atom:link href="www.norbjerg.dk/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.norbjerg.dk/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>First Post</title>
-      <link>www.norbjerg.dk/posts/first-post/</link>
+      <link>http://www.norbjerg.dk/posts/first-post/</link>
       <pubDate>Fri, 28 Jun 2019 11:15:04 +0200</pubDate>
       
-      <guid>www.norbjerg.dk/posts/first-post/</guid>
+      <guid>http://www.norbjerg.dk/posts/first-post/</guid>
       <description>Hi and welcome to my newly designed site. I had previously a (in hindsight) very ugly webpage, that i built last year in vanilla HTML, JS and CSS 🤮. Well it wasn&amp;rsquo;t that bad however i&amp;rsquo;ve learnt tons of new stuff in the last year and i wanted to try out with a static page generator. For this website i&amp;rsquo;ve chosen Hugo, and while i havent explored the possibilties completely it seems nice for small webpages.</description>
     </item>
     
