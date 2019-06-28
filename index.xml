@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Christoffer Nørbjerg</title>
-    <link>norbjerg.dk/</link>
+    <link>http://www.norbjerg.dk/</link>
     <description>Recent content on Christoffer Nørbjerg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Jun 2019 11:15:04 +0200</lastBuildDate>
     
-	<atom:link href="norbjerg.dk/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.norbjerg.dk/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>First Post</title>
-      <link>norbjerg.dk/posts/first-post/</link>
+      <link>http://www.norbjerg.dk/posts/first-post/</link>
       <pubDate>Fri, 28 Jun 2019 11:15:04 +0200</pubDate>
       
-      <guid>norbjerg.dk/posts/first-post/</guid>
+      <guid>http://www.norbjerg.dk/posts/first-post/</guid>
       <description>Hi and welcome to my newly designed site. I had previously a (in hindsight) very ugly webpage, that i built last year in vanilla HTML, JS and CSS 🤮. Well it wasn&amp;rsquo;t that bad however i&amp;rsquo;ve learnt tons of new stuff in the last year and i wanted to try out with a static page generator. For this website i&amp;rsquo;ve chosen Hugo, and while i havent explored the possibilties completely it seems nice for small webpages.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>norbjerg.dk/contact/</link>
+      <link>http://www.norbjerg.dk/contact/</link>
       <pubDate>Fri, 28 Jun 2019 11:12:35 +0200</pubDate>
       
-      <guid>norbjerg.dk/contact/</guid>
+      <guid>http://www.norbjerg.dk/contact/</guid>
       <description>If you are interested in me as a person, or any of the work i&amp;rsquo;ve done feel free to contact me on my email or through linkedin.
 Email: Chrisnoerbjerg@gmail.com
 Linkedin: Link</description>
@@ -33,38 +33,38 @@ Linkedin: Link</description>
     
     <item>
       <title>Aoff</title>
-      <link>norbjerg.dk/projects/aoff/</link>
+      <link>http://www.norbjerg.dk/projects/aoff/</link>
       <pubDate>Fri, 28 Jun 2019 11:05:58 +0200</pubDate>
       
-      <guid>norbjerg.dk/projects/aoff/</guid>
+      <guid>http://www.norbjerg.dk/projects/aoff/</guid>
       <description>Aarhus Økologiske Fødevare Fællesskab AOFF is a volunteer group where members can buy cheap organic and local greens, differentiating each week. Being mainly maintained by volunteers chipping in, and their only programmer leaving, both their front- and back-end suffered. Multiple Ad-hoc solutions had been made, as nobody knew how to add items to their on-line web-shop, newer products were kept separate in a text document and added manually by a person, opening up for multiple human errors along the way.</description>
     </item>
     
     <item>
       <title>Jamii</title>
-      <link>norbjerg.dk/projects/jamii/</link>
+      <link>http://www.norbjerg.dk/projects/jamii/</link>
       <pubDate>Fri, 28 Jun 2019 10:58:56 +0200</pubDate>
       
-      <guid>norbjerg.dk/projects/jamii/</guid>
+      <guid>http://www.norbjerg.dk/projects/jamii/</guid>
       <description>&amp;ldquo;Community&amp;rdquo; in Swahili The Jamii was concerned with Urban Gardening. A semi-new phenomenon where people in cities start growing vegetables in boxes. This ranges from people growing tomatoes in pots on their balcony, to groups getting together and renting a larger space. As seen on the render on the left we worked on such larger communities.
 The Jamii was a console on which to create a independent market between gardeners, each urban gardening community would have their own marketplace were members could auction away any vegetables they would not use themselves, while they still are fresh, in return they would earn points that they themselves would be able to buy fresh veggies that another gardener had put up for auction.</description>
     </item>
     
     <item>
       <title>Ambird</title>
-      <link>norbjerg.dk/projects/ambird/</link>
+      <link>http://www.norbjerg.dk/projects/ambird/</link>
       <pubDate>Fri, 28 Jun 2019 10:46:19 +0200</pubDate>
       
-      <guid>norbjerg.dk/projects/ambird/</guid>
+      <guid>http://www.norbjerg.dk/projects/ambird/</guid>
       <description>Ambient Bird This project was completed during the Advanced Physical Computing course. This course had three distinct aspects, combined to create an overall goal. First of all we were tasked to create our own embedded software, without using anything but micro controllers as our CPU, meaning no Arduino/Raspberry and the like. In our case we used an ATMega8. Secondly the product would have to be ambient, able to pass as an object in the background, while still managing to complete it&amp;rsquo;s task Thirdly it had to give value to peoples lives, e.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>norbjerg.dk/about/</link>
+      <link>http://www.norbjerg.dk/about/</link>
       <pubDate>Fri, 28 Jun 2019 10:36:13 +0200</pubDate>
       
-      <guid>norbjerg.dk/about/</guid>
+      <guid>http://www.norbjerg.dk/about/</guid>
       <description>My skills Experienced  Html, Css, Less, Sass Javascript, Angular, Node, PHP MySQL, MongoDB Java  Competent  C++ C Assembly (Specifically for ATMEL CPU&amp;rsquo;s)  How i ended up here My first experience with programming wasn&amp;rsquo;t until I joined Aarhus University back in 2012. I enrolled in CompSci (Datalogi), and I thoroughly enjoyed programming. However during my two years there I became increasingly dissatisfied with the priorities on the education, in my opinion inciting students to pursue a PhD instead of preparing them to work as a software engineer.</description>
     </item>
     
