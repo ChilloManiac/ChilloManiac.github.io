@@ -1,6 +1,0 @@
-<h2> Norbjerg.dk </h2>
-<h3> This very website </h3>
-<p>A small site created mainly to be my on-line portfolio, as well as getting my hands on some languages I haven't worked with for a while.</p>
-<p>It was also a good excuse to get my hands dirty with some new tools for making websites, most notably "css grids", as well as refreshing my memory on languages I haven't touched in a while, such as less (css pre-processor) and javascript.</p>
-<h4>Technologies</h4>
-<p>HTML, less (css), javascript and node.js for gulp, browser-sync and automatic less compilation.</p>
