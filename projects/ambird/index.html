@@ -120,220 +120,470 @@ This project was completed during the Advanced Physical Computing course. This c
 
 <h3 id="code-example">Code example</h3>
 
-<p>Below here is the sourcecode the AmBird. Written in basic for a ATMega32.</p>
+<p>Below here is the sourcecode the AmBird. Written in basic for a ATMega32.
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-basic" data-lang="basic"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-basic" data-lang="basic"><span style="color:#960050;background-color:#1e0010">$</span>baud <span style="color:#f92672">=</span> 9600
+<span style="color:#960050;background-color:#1e0010">$</span>crystal <span style="color:#f92672">=</span> 8000000
 
-<pre><code>$baud = 9600
-$crystal = 8000000
+<span style="color:#75715e">&#39;Ports setting up ports</span>
+<span style="color:#75715e">&#39;Using ADC on PortC4 and PortC5</span>
+<span style="color:#75715e">&#39;Rest of PortC is set as output manually to avoid</span>
+<span style="color:#75715e">&#39;overwriting the ADC configuration</span>
+Config Portb <span style="color:#f92672">=</span> Output
+Config Portd <span style="color:#f92672">=</span> Output
+Config Adc <span style="color:#f92672">=</span> Single , Prescaler <span style="color:#f92672">=</span> Auto
+Config Portc<span style="color:#ae81ff">.0</span> <span style="color:#f92672">=</span> Output
+Config Portc<span style="color:#ae81ff">.1</span> <span style="color:#f92672">=</span> Output
 
-'Ports setting up ports
-'Using ADC on PortC4 and PortC5
-'Rest of PortC is set as output manually to avoid
-'overwriting the ADC configuration
-Config Portb = Output
-Config Portd = Output
-Config Adc = Single , Prescaler = Auto
-Config Portc.0 = Output
-Config Portc.1 = Output
-
-'Setting up Timer for PWM usage
-'This allows us to send an 8bit value as analog output
-'This is used for controlling the strength of the Red and Blue
-'LEDs within the RBG-LED
-'Theres only 2 of those ports on the ATmega8, hence why the green is not
-'controlled in this way
-Config Timer1 = Pwm , Pwm = 8 , Compare_a_pwm = Clear_up , Compare_b_pwm = Clear_up , Prescale = 1
+<span style="color:#75715e">&#39;Setting up Timer for PWM usage</span>
+<span style="color:#75715e">&#39;This allows us to send an 8bit value as analog output</span>
+<span style="color:#75715e">&#39;This is used for controlling the strength of the Red and Blue</span>
+<span style="color:#75715e">&#39;LEDs within the RBG-LED</span>
+<span style="color:#75715e">&#39;Theres only 2 of those ports on the ATmega8, hence why the green is not</span>
+<span style="color:#75715e">&#39;controlled in this way</span>
+Config Timer1 <span style="color:#f92672">=</span> Pwm , Pwm <span style="color:#f92672">=</span> 8 , Compare_a_pwm <span style="color:#f92672">=</span> Clear_up , Compare_b_pwm <span style="color:#f92672">=</span> Clear_up , Prescale <span style="color:#f92672">=</span> 1
 
 
-'Declaring subs:
-'Sets the color of the LED to predefined color. Parameter corresponds to a color
+<span style="color:#75715e">&#39;Declaring subs:</span>
+<span style="color:#75715e">&#39;Sets the color of the LED to predefined color. Parameter corresponds to a color</span>
 Declare Sub Setcolor(byval Color As Byte)
-'Shuts off the RGB LEDs
+<span style="color:#75715e">&#39;Shuts off the RGB LEDs</span>
 Declare Sub Resetcolor()
-'Blinks the LEDs on their current color a few times to signal
-'that the color has been sent
+<span style="color:#75715e">&#39;Blinks the LEDs on their current color a few times to signal</span>
+<span style="color:#75715e">&#39;that the color has been sent</span>
 Declare Sub Colorblink()
-'Subs to set colors, to make the code look cleaner
-Declare Sub Setgreen(byval Value As Byte)                   '2bit (0-3)
-Declare Sub Setred(byval Value As Byte)                     '8bit (0-255)
-Declare Sub Setblue(byval Value As Byte)                    '8bit (0-255)
+<span style="color:#75715e">&#39;Subs to set colors, to make the code look cleaner</span>
+Declare Sub Setgreen(byval Value As Byte)                   <span style="color:#75715e">&#39;2bit (0-3)</span>
+Declare Sub Setred(byval Value As Byte)                     <span style="color:#75715e">&#39;8bit (0-255)</span>
+Declare Sub Setblue(byval Value As Byte)                    <span style="color:#75715e">&#39;8bit (0-255)</span>
 
-'Takes a distance from the IR-sensor, and translates it to a number
-'that corresponds to a color in the subroutine 'setcolor'
+<span style="color:#75715e">&#39;Takes a distance from the IR-sensor, and translates it to a number</span>
+<span style="color:#75715e">&#39;that corresponds to a color in the subroutine &#39;setcolor&#39;</span>
 Declare Function Irtocolortranslater(byval Distance As Byte) As Byte
-'Takes a value from the IR-sensor and translates it into a cm-value
-'Will return 255 as an error value for debouncing purposes.
+<span style="color:#75715e">&#39;Takes a value from the IR-sensor and translates it into a cm-value</span>
+<span style="color:#75715e">&#39;Will return 255 as an error value for debouncing purposes.</span>
 Declare Function Getirvalue() As Byte
-'Checks the current input from the microphone, if higher than a predefined value
-'it will return 1, otherwise 0
-'Somehow we could not get this function to work with &quot;bit&quot; as value_type
+<span style="color:#75715e">&#39;Checks the current input from the microphone, if higher than a predefined value</span>
+<span style="color:#75715e">&#39;it will return 1, otherwise 0</span>
+<span style="color:#75715e">&#39;Somehow we could not get this function to work with &#34;bit&#34; as value_type</span>
 Declare Function Ismicinputhigh() As Byte
-'This function takes an ascii-input from the bluetooth
-'and with a primitive method translates it to a color-number
+<span style="color:#75715e">&#39;This function takes an ascii-input from the bluetooth</span>
+<span style="color:#75715e">&#39;and with a primitive method translates it to a color-number</span>
 Declare Function Translateinput(byval Asciival As Byte) As Byte
 
-'Variables
-'Holds a value for the current color displayed
+<span style="color:#75715e">&#39;Variables</span>
+<span style="color:#75715e">&#39;Holds a value for the current color displayed</span>
 Dim Localcolor As Byte
-'Hold a value for the color received from the paired device
+<span style="color:#75715e">&#39;Hold a value for the color received from the paired device</span>
 Dim Receivedcolor As Byte
 
-'Flags to ensure the Do-loop runs as it should:
-'This flag allows you to turn off a received signal with the IR
-'Instead of starting to set a new color
+<span style="color:#75715e">&#39;Flags to ensure the Do-loop runs as it should:</span>
+<span style="color:#75715e">&#39;This flag allows you to turn off a received signal with the IR</span>
+<span style="color:#75715e">&#39;Instead of starting to set a new color</span>
 Dim Hasreceivedcolor As Bit
-'This prevents the Do-loop to reset the color that has been received
+<span style="color:#75715e">&#39;This prevents the Do-loop to reset the color that has been received</span>
 Dim Issettingcolor As Bit
 
 
-'Used for debouncing in GetIrValue
-'The Value read from the IR has to be the same multiple times in a row
-'to avoid random reads from the IR to be returned.
+<span style="color:#75715e">&#39;Used for debouncing in GetIrValue</span>
+<span style="color:#75715e">&#39;The Value read from the IR has to be the same multiple times in a row</span>
+<span style="color:#75715e">&#39;to avoid random reads from the IR to be returned.</span>
 Dim Debouncer1 As Byte
 Dim Debouncer2 As Byte
 Dim Debouncer3 As Byte
 
-'The current value from the IR in cm
+<span style="color:#75715e">&#39;The current value from the IR in cm</span>
 Dim Irvalue As Byte
 
 
-'Setting up default values
-Debouncer1 = 0
-Debouncer2 = 0
-Debouncer3 = 0
+<span style="color:#75715e">&#39;Setting up default values</span>
+Debouncer1 <span style="color:#f92672">=</span> 0
+Debouncer2 <span style="color:#f92672">=</span> 0
+Debouncer3 <span style="color:#f92672">=</span> 0
 
 
-'The main loop of the program
+<span style="color:#75715e">&#39;The main loop of the program</span>
 Do
-Irvalue = Getirvalue()
-'If the IR-value (in centimeters) enter loop
-While Irvalue &gt;= 5 And Irvalue &lt;= 25
-    Issettingcolor = 1
-    'If the current color has been received, turn it off
-    If Hasreceivedcolor = 1 Then
+Irvalue <span style="color:#f92672">=</span> Getirvalue()
+<span style="color:#75715e">&#39;If the IR-value (in centimeters) enter loop</span>
+While Irvalue <span style="color:#f92672">&gt;=</span> 5 And Irvalue <span style="color:#f92672">&lt;=</span> 25
+    Issettingcolor <span style="color:#f92672">=</span> 1
+    <span style="color:#75715e">&#39;If the current color has been received, turn it off</span>
+    If Hasreceivedcolor <span style="color:#f92672">=</span> 1 Then
         Call Resetcolor()
-        Hasreceivedcolor = 0
+        Hasreceivedcolor <span style="color:#f92672">=</span> 0
         Waitms 4000
-    'Otherwise it means that the user wants to specify a color for
-    'him/her to send
+    <span style="color:#75715e">&#39;Otherwise it means that the user wants to specify a color for</span>
+    <span style="color:#75715e">&#39;him/her to send</span>
     Else
-        Localcolor = Irtocolortranslater(irvalue)
+        Localcolor <span style="color:#f92672">=</span> Irtocolortranslater(irvalue)
         Call Setcolor(localcolor)
-        'Checks if the color currently selected should be sent
-        If Ismicinputhigh() = 1 Then
-            'transmit which color was selected to paired AmBird
+        <span style="color:#75715e">&#39;Checks if the color currently selected should be sent</span>
+        If Ismicinputhigh() <span style="color:#f92672">=</span> 1 Then
+            <span style="color:#75715e">&#39;transmit which color was selected to paired AmBird</span>
             Print Localcolor
-            'Colorblink is a visual feedback that shows the color has been sent
+            <span style="color:#75715e">&#39;Colorblink is a visual feedback that shows the color has been sent</span>
             Call Colorblink()
         End If
     End If
     Waitms 15
-    'To avoid the whileloop to run forever, we need to check for new IrValues
-    Irvalue = Getirvalue()
+    <span style="color:#75715e">&#39;To avoid the whileloop to run forever, we need to check for new IrValues</span>
+    Irvalue <span style="color:#f92672">=</span> Getirvalue()
 Wend
-'This flag allows you to turn off a received signal with the IR
-'Instead of starting to set a new color
-If Issettingcolor = 1 And Irvalue &lt;&gt; 255 Then
+<span style="color:#75715e">&#39;This flag allows you to turn off a received signal with the IR</span>
+<span style="color:#75715e">&#39;Instead of starting to set a new color</span>
+If Issettingcolor <span style="color:#f92672">=</span> 1 And Irvalue <span style="color:#f92672">&lt;&gt;</span> 255 Then
     Call Resetcolor()
-    Issettingcolor = 0
+    Issettingcolor <span style="color:#f92672">=</span> 0
 End If
 
-'Checks if theres an input from the bluetooth component
-'and that an illegal value hasnt been read from the IR
-While Ischarwaiting() = 1 And Irvalue &lt;&gt; 255
-    Receivedcolor = Waitkey()
-    'convert from Ascii
-    Receivedcolor = Translateinput(receivedcolor)
-    If Receivedcolor &gt; 0 And Receivedcolor &lt; 7 Then
-        'Sets a flag
-        Hasreceivedcolor = 1
+<span style="color:#75715e">&#39;Checks if theres an input from the bluetooth component</span>
+<span style="color:#75715e">&#39;and that an illegal value hasnt been read from the IR</span>
+While Ischarwaiting() <span style="color:#f92672">=</span> 1 And Irvalue <span style="color:#f92672">&lt;&gt;</span> 255
+    Receivedcolor <span style="color:#f92672">=</span> Waitkey()
+    <span style="color:#75715e">&#39;convert from Ascii</span>
+    Receivedcolor <span style="color:#f92672">=</span> Translateinput(receivedcolor)
+    If Receivedcolor <span style="color:#f92672">&gt;</span> 0 And Receivedcolor <span style="color:#f92672">&lt;</span> 7 Then
+        <span style="color:#75715e">&#39;Sets a flag</span>
+        Hasreceivedcolor <span style="color:#f92672">=</span> 1
         Call Setcolor(receivedcolor)
     End If
 Wend
 Waitms 25
 Loop
 
-'Converts an Ascii number to a decimal number, very primitively
+<span style="color:#75715e">&#39;Converts an Ascii number to a decimal number, very primitively</span>
 Function Translateinput(asciival As Byte)
 Local P As Byte
-P = Asciival - 48
-Translateinput = P
+P <span style="color:#f92672">=</span> Asciival <span style="color:#f92672">-</span> 48
+Translateinput <span style="color:#f92672">=</span> P
 End Function
 
-'Returns 0 or 1 depending on the MicInput
+<span style="color:#75715e">&#39;Returns 0 or 1 depending on the MicInput</span>
 Function Ismicinputhigh()
 Local P As Word
-P = Getadc(5)
-If P &gt; 505 And P &lt; 1000 Then
-    Ismicinputhigh = 1
+P <span style="color:#f92672">=</span> Getadc(5)
+If P <span style="color:#f92672">&gt;</span> 505 And P <span style="color:#f92672">&lt;</span> 1000 Then
+    Ismicinputhigh <span style="color:#f92672">=</span> 1
 Else
-    Ismicinputhigh = 0
+    Ismicinputhigh <span style="color:#f92672">=</span> 0
 End If
 End Function
 
-'Gets a value from the IR-sensor and converts it to CM
-'Then it saves the values in the Debouncers.
-'If all the debouncer variables are equal to P
-' (note That Debouncer1 Will Always Be Equal To P)
-'Then The Value In Cm Is Returned, Otherwise Its Deemed As A Random Value
+<span style="color:#75715e">&#39;Gets a value from the IR-sensor and converts it to CM</span>
+<span style="color:#75715e">&#39;Then it saves the values in the Debouncers.</span>
+<span style="color:#75715e">&#39;If all the debouncer variables are equal to P</span>
+<span style="color:#75715e">&#39; (note That Debouncer1 Will Always Be Equal To P)</span>
+<span style="color:#75715e">&#39;Then The Value In Cm Is Returned, Otherwise Its Deemed As A Random Value</span>
 Function Getirvalue()
 Local P As Integer
-P = Getadc(4)
-P = P - 11
-P = 2076 / P
-If P &gt; 0 And P &lt; 30 Then
-    Debouncer3 = Debouncer2
-    Debouncer2 = Debouncer1
-    Debouncer1 = P
-    If Debouncer2 = P And Debouncer3 = P Then
-        Getirvalue = P
+P <span style="color:#f92672">=</span> Getadc(4)
+P <span style="color:#f92672">=</span> P <span style="color:#f92672">-</span> 11
+P <span style="color:#f92672">=</span> 2076 <span style="color:#f92672">/</span> P
+If P <span style="color:#f92672">&gt;</span> 0 And P <span style="color:#f92672">&lt;</span> 30 Then
+    Debouncer3 <span style="color:#f92672">=</span> Debouncer2
+    Debouncer2 <span style="color:#f92672">=</span> Debouncer1
+    Debouncer1 <span style="color:#f92672">=</span> P
+    If Debouncer2 <span style="color:#f92672">=</span> P And Debouncer3 <span style="color:#f92672">=</span> P Then
+        Getirvalue <span style="color:#f92672">=</span> P
     Else
-        Getirvalue = 255
+        Getirvalue <span style="color:#f92672">=</span> 255
     End If
 Else
-    Getirvalue = 0
+    Getirvalue <span style="color:#f92672">=</span> 0
 End If
 End Function
 
-'Translates a distance in CM to a number representing a color
+<span style="color:#75715e">&#39;Translates a distance in CM to a number representing a color</span>
 Function Irtocolortranslater(byval Distance As Byte)
 Local P As Byte
-P = Distance
-P = P - 2
-P = P / 3
-Irtocolortranslater = P
+P <span style="color:#f92672">=</span> Distance
+P <span style="color:#f92672">=</span> P <span style="color:#f92672">-</span> 2
+P <span style="color:#f92672">=</span> P <span style="color:#f92672">/</span> 3
+Irtocolortranslater <span style="color:#f92672">=</span> P
 End Function
 
-'Sets the green LEDs value with an R/R2 ladder
-'and a binary value from 0-15
+<span style="color:#75715e">&#39;Sets the green LEDs value with an R/R2 ladder</span>
+<span style="color:#75715e">&#39;and a binary value from 0-15</span>
 Sub Setgreen(value As Byte)
-If Value &lt; 4 Then
-    Reset Portc.0
-    Reset Portc.1
-    If Value &gt;= 2 Then
-        Set Portc.1
-        Value = Value - 2
+If Value <span style="color:#f92672">&lt;</span> 4 Then
+    Reset Portc<span style="color:#ae81ff">.0</span>
+    Reset Portc<span style="color:#ae81ff">.1</span>
+    If Value <span style="color:#f92672">&gt;=</span> 2 Then
+        Set Portc<span style="color:#ae81ff">.1</span>
+        Value <span style="color:#f92672">=</span> Value <span style="color:#f92672">-</span> 2
     End If
-    If Value = 1 Then
-        Set Portc.0
-        Value = Value - 1
+    If Value <span style="color:#f92672">=</span> 1 Then
+        Set Portc<span style="color:#ae81ff">.0</span>
+        Value <span style="color:#f92672">=</span> Value <span style="color:#f92672">-</span> 1
     End If
 End If
 End Sub
 
-'Set red LED with PWM
+<span style="color:#75715e">&#39;Set red LED with PWM</span>
 Sub Setred(value As Byte)
-Pwm1a = Value
+Pwm1a <span style="color:#f92672">=</span> Value
 End Sub
 
-'Set red LED with PWM
+<span style="color:#75715e">&#39;Set red LED with PWM</span>
 Sub Setblue(value As Byte)
-Pwm1b = Value
+Pwm1b <span style="color:#f92672">=</span> Value
 End Sub
 
-'Simple sub that blinks the current color and the shuts off the LED
+<span style="color:#75715e">&#39;Simple sub that blinks the current color and the shuts off the LED</span>
 Sub Colorblink()
 Local A As Byte
-For A = 1 To 3 Step 1
+For A <span style="color:#f92672">=</span> 1 To 3 Step 1
     Call Resetcolor()
     Waitms 600
     Call Setcolor(localcolor)
@@ -343,33 +593,34 @@ Call Resetcolor()
 Waitms 2000
 End Sub
 
-'Turns off the entire RGB-LED
+<span style="color:#75715e">&#39;Turns off the entire RGB-LED</span>
 Sub Resetcolor()
-Pwm1a = 0
-Pwm1b = 0
-Reset Portc.0
-Reset Portc.1
+Pwm1a <span style="color:#f92672">=</span> 0
+Pwm1b <span style="color:#f92672">=</span> 0
+Reset Portc<span style="color:#ae81ff">.0</span>
+Reset Portc<span style="color:#ae81ff">.1</span>
 End Sub
 
-'Sets a color depending on the value (controls both red, blue and green)
+<span style="color:#75715e">&#39;Sets a color depending on the value (controls both red, blue and green)</span>
 Sub Setcolor(color As Byte)
-If Color &gt;= 1 And Color &lt;= 6 Then
+If Color <span style="color:#f92672">&gt;=</span> 1 And Color <span style="color:#f92672">&lt;=</span> 6 Then
     Call Resetcolor()
     Select Case Color
-        Case 1 : Call Setred(255)                          'Red
-        Case 2 : Call Setred(255)                          'purple
+        Case 1 <span style="color:#f92672">:</span> Call Setred(255)                          <span style="color:#75715e">&#39;Red</span>
+        Case 2 <span style="color:#f92672">:</span> Call Setred(255)                          <span style="color:#75715e">&#39;purple</span>
                 Call Setblue(255)
-        Case 3 : Call Setred(150)                          'yellow
+        Case 3 <span style="color:#f92672">:</span> Call Setred(150)                          <span style="color:#75715e">&#39;yellow</span>
                 Call Setgreen(3)
-        Case 4 : Call Setgreen(3)                          'green
-        Case 5 : Call Setgreen(3)                          'teal
+        Case 4 <span style="color:#f92672">:</span> Call Setgreen(3)                          <span style="color:#75715e">&#39;green</span>
+        Case 5 <span style="color:#f92672">:</span> Call Setgreen(3)                          <span style="color:#75715e">&#39;teal</span>
                 Call Setblue(60)
-        Case 6 : Call Setblue(255)                         'blue
+        Case 6 <span style="color:#f92672">:</span> Call Setblue(255)                         <span style="color:#75715e">&#39;blue</span>
     End Select
 End If
 End Sub
-End
-</code></pre>
+End</code></pre></td></tr></table>
+</div>
+</div></p>
 
   </article>
 </section>
